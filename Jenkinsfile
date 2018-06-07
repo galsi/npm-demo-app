@@ -27,12 +27,6 @@ npm run build'''
     }
 
     stage('Test') {
-      when {
-        expression {
-          params.REQUESTED_ACTION == 'Build'
-        }
-
-      }
       steps {
         sh 'npm run test'
       }
