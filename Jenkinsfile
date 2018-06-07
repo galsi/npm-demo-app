@@ -19,12 +19,21 @@ npm run build'''
       }
     }
     stage('Deploy') {
-      steps {
-        sh '''mkdir playbooks/files
+      parallel {
+        stage('Deploy') {
+          steps {
+            sh '''mkdir playbooks/files
 cp nodejs-demoapp.zip playbooks/files/nodejs-demoapp.zip
 cd playbooks
 ansible-playbook deploy_dev.yml
 '''
+          }
+        }
+        stage('Uplad') {
+          steps {
+            sh 'curl -uadmin:APBcyn5vVoefw71T -T nodejs-demoapp.zip "http://35.205.54.43:8081/artifactory/generic-local/nodejs-demoapp.zip"'
+          }
+        }
       }
     }
   }
