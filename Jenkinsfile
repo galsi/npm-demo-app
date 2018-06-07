@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Build Demo App') {
+    stage('Shell Script Run') {
       when {
         expression {
           params.REQUESTED_ACTION == 'Build'
