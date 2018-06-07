@@ -19,7 +19,7 @@
     - name: Unarchive Zip file
       unarchive:
         src: /tmp/2/nodejs-demoapp.zip
-        dest: /tmp/2
+        dest: /tmp/2/
         remote_src: yes
     
     - name: Install "pm2" node.js package.
