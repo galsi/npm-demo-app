@@ -18,6 +18,12 @@ npm run build'''
         sh 'npm run test'
       }
     }
+    stage('Deploy') {
+      steps {
+        sh '''mkdir playbooks/files
+'''
+      }
+    }
   }
   parameters {
     choice(name: 'REQUESTED_ACTION', choices: '''Build
