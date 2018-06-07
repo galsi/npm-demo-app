@@ -15,11 +15,11 @@
     - name: Upload Zip file
       copy:
         src: files/nodejs-demoapp.zip
-        dest: /tmp
+        dest: /tmp/2
     - name: Unarchive Zip file
       unarchive:
-        src: /tmp/nodejs-demoapp.zip
-        dest: /tmp
+        src: /tmp/2/nodejs-demoapp.zip
+        dest: /tmp/2
         remote_src: yes
     
     - name: Install "pm2" node.js package.
