@@ -30,9 +30,9 @@
     - name: Install packages based on package.json
       shell: npm i
       args:
-        chdir: /tmp
+        chdir: /tmp/2
     
     - name: Run app using pm2
       shell: pm2 start server.js -f
       args:
-        chdir: /tmp
+        chdir: /tmp/2
